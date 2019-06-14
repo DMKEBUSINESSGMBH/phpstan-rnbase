@@ -28,5 +28,12 @@
         "psr-4": {
             "DMK\\PHPStan\\Tests\\": "tests"
         }
-    }
+    },
+    "extra": {
+        "phpstan": {
+          "includes": [
+            "extension.neon"
+          ]
+        }
+      }
 }

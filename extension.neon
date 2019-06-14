@@ -1,0 +1,5 @@
+services:
+    - 
+        class: DMK\PHPStan\Type\DynamicGeneralUtilityExtension
+        tags:
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension

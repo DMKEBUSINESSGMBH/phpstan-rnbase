@@ -7,6 +7,7 @@ namespace DMK\PHPStan\Type;
 use PhpParser\Node\Expr\ClassConstFetch;
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Expr\StaticCall;
+use PhpParser\Node\Scalar\String_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\MethodReflection;
 use PHPStan\Reflection\ParametersAcceptorSelector;
@@ -39,6 +40,10 @@ class DynamicGeneralUtilityExtension implements DynamicStaticMethodReturnTypeExt
             return new ObjectType((string) $arg);
         }
 
+        if ($arg instanceof String_) {
+            return new ObjectType($arg->value);
+        }
+        
         return ParametersAcceptorSelector::selectSingle($methodReflection->getVariants())->getReturnType();
     }
 

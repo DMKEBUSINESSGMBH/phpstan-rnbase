@@ -36,7 +36,7 @@ class DynamicGeneralUtilityExtension implements DynamicStaticMethodReturnTypeExt
         $arg = $methodCall->args[0]->value;
 
         if ($arg instanceof ClassConstFetch) {
-            return new ObjectType((string) $arg);
+            return new ObjectType((string) $arg->class);
         }
 
         return ParametersAcceptorSelector::selectSingle($methodReflection->getVariants())->getReturnType();

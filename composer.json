@@ -3,7 +3,7 @@
     "description": "PHPStan extension for rn-base.",
     "type": "phpstan-extension",
     "require": {
-        "phpstan/phpstan": "^0.11.8"
+        "phpstan/phpstan": "^0.12"
     },
     "require-dev": {
         "digedag/rn-base": "^1.9",
